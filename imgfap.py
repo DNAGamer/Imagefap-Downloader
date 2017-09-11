@@ -9,15 +9,15 @@ while True:
     imglist = ""
     URL = input("Please input the gallery url: ")
     url = "http://www.imagefap.com/pictures/"
-    galleryId = URL.replace(url,"")
+    galleryId = URL.replace(url, "")
     galleryId = galleryId.split("/")[0]
     URL = "{}{}/?grid={}&view=2".format(url, galleryId, galleryId)
-    html =  urllib.request.urlopen(URL).read()
+    html = urllib.request.urlopen(URL).read()
     imglist = re.findall('<td id="([0-9]+)" align="center"  ?valign="top">', str(html))
     imglist2 = []
     for image in imglist:
         url = "http://www.imagefap.com/photo/{}/".format(image)
-        html =  urllib.request.urlopen(url).read()
+        html = urllib.request.urlopen(url).read()
         imglist2.append(re.findall('"contentUrl": "(.*?)",', str(html)))
         print("Processed {}/{}".format(str(len(imglist2)), str(len(imglist))))
     urls = imglist2
