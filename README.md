@@ -8,6 +8,10 @@ This script downloads every image it can find from an imagefap gallery, simply s
 
 I do not own nor am i afiliated with imagefap, this is just a script to help people get way too much porn
 
+# Requirments
+
+* Personal lubricant (Because dry fapping is 4 scrubs)
+ 
 # How do i get this?
 
 [Download Python](https://www.python.org/downloads/release/python-352/)
