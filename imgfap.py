@@ -4,15 +4,21 @@ import re
 import os
 
 while True:
-    URL = ""
-    pnum = ""
-    imglist = ""
-    URL = input("Please input the gallery url: ")
-    url = "http://www.imagefap.com/pictures/"
-    galleryId = URL.replace(url, "")
-    galleryId = galleryId.split("/")[0]
-    URL = "{}{}/?grid={}&view=2".format(url, galleryId, galleryId)
-    html = urllib.request.urlopen(URL).read()
+    while True:
+        try:
+            URL = ""
+            pnum = ""
+            imglist = ""
+            URL = input("Please input the gallery url: ")
+            url = "http://www.imagefap.com/pictures/"
+            galleryId = URL.replace(url, "")
+            galleryId = galleryId.split("/")[0]
+            URL = "{}{}/?grid={}&view=2".format(url, galleryId, galleryId)
+            html = urllib.request.urlopen(URL).read()
+            break
+        except Exception:
+            print("Input not formatted right")
+            pass
     imglist = re.findall('<td id="([0-9]+)" align="center"  ?valign="top">', str(html))
     imglist2 = []
     for image in imglist:
