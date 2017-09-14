@@ -7,7 +7,8 @@ This script downloads every image it can find from an imagefap gallery, simply s
 # Disclaimer
 
 I do not own nor am i afiliated with imagefap, this is just a script to help people get way too much porn
-# requirments
+
+# Requirments
 
 * Personal lubricant (Because dry fapping is 4 scrubs)
  
