@@ -37,7 +37,15 @@ while True:
         name = image.split("/")[-1]
         with urllib.request.urlopen(image) as f:
             imageContent = f.read()
-            with open(dir_name + '/' + name, "wb") as f:
+            file_name = (dir_name + '/' + name)
+            for x in range(1,10):
+                #print(file_name)
+                if os.path.isfile(file_name):
+                    x = str(x)
+                    file_name = (dir_name + '/' + x + name)
+                else:
+                    break
+            with open(file_name, "wb") as f:
                 f.write(imageContent)
                 print("downloaded " + name)
     exit_in = input("download another?[y/n]")
